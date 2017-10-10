@@ -8,6 +8,7 @@
 # 3. On which days did more than 1% of the requests lead to errors?
 
 # Runs on python3
+# 'python3' >= '3.5.2'
 import psycopg2
 DBNAME = "news"
 
