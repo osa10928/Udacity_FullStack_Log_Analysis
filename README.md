@@ -55,9 +55,9 @@ The vagrant website recommends running:
 
 to initatiatize a default, fully functioning VM running Ubuntu 12.04 LTS 64-bit.
 
-For the sake of this tutorial a vagrant file directory is availabe for download [here.](https://d17h27t6h515a5.cloudfront.net/topher/2017/August/59822701_fsnd-virtual-machine/fsnd-virtual-machine.zip) Alternatively, you can fork the repository from github by clicking [here.](https://github.com/udacity/fullstack-nanodegree-vm) This directory comes fully equiped with a VagrantFile that will set up a VM environment that will allow us to carry out this exercise (and is brought to you by Udacity). Once downloaded cd into the 'vagrant' directory and call
+For the sake of this tutorial a vagrant file directory is availabe for download [here.](https://d17h27t6h515a5.cloudfront.net/topher/2017/August/59822701_fsnd-virtual-machine/fsnd-virtual-machine.zip) Alternatively, you can fork the repository from github by clicking [here.](https://github.com/udacity/fullstack-nanodegree-vm) This directory comes fully equiped with a VagrantFile that will set up a VM environment that will allow us to carry out this exercise (and is brought to you by Udacity). Once downloaded, cd into the 'vagrant' directory and call
 
-`'vagrant init`
+`vagrant init`
 
 Once Vagrant has initialized, run the command
 
