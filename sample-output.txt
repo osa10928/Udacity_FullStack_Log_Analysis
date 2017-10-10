@@ -1,0 +1,13 @@
+The top 3 articles are:
+candidate is jerk - 338647
+bears love berries - 253801
+bad things gone - 170098
+
+The top article authors of all time are:
+Ursula La Multa - 507594
+Rudolf von Treppenwitz - 423457
+Anonymous Contributor - 170098
+Markoff Chaney - 84557
+
+Dates with errors greater than 1%:
+2016-07-17 - 2.3% errors
