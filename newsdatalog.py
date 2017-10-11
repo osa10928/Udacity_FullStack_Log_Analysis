@@ -21,7 +21,7 @@ def connect(database_name="news"):
         c = db.cursor()
         return db, c
     except:
-        print("<error message>")
+        print("Cannot connect to database")
 
 # This execute finds the top three articles
 def top3articles():
@@ -44,7 +44,7 @@ def top3articles():
         # Process article name
         article = article.split("/")[2].split("-")
         articleTitle = " ".join(article)
-        print("%s - %s" % (articleTitle, str(num)))
+        print("%s - %s views" % (articleTitle, str(num)))
 
     db.close()
 
@@ -60,9 +60,9 @@ def popauthors():
             FROM log \
             GROUP BY path \
             HAVING path like '/article%' \
-            ORDER BY count desc limit 8) \
+            ORDER BY count desc) \
             AS hitcount join articles \
-            ON ('/article/' || articles.slug) like hitcount.path) \
+            ON ('/article/' || articles.slug) = hitcount.path) \
     AS authorcount on authorcount.author = authors.id \
     GROUP BY authors.name \
     ORDER BY sum DESC"
@@ -82,7 +82,7 @@ def popauthors():
 # This final execute gets dates with errors above 1%
 def errordates():
     db, c = connect()
-    query = "SELECT fails.fordate, \
+    query = "SELECT to_char(fails.fordate, 'Month DD, YYYY'), \
     (cast(fails.failed AS float)/cast(fails.totalhits AS float)*100) AS error \
     FROM (\
         SELECT date(time) AS fordate, count(status) AS totalhits, \
@@ -104,6 +104,7 @@ def errordates():
 
 # Now execute the 3 functions to get the answers
 
-top3articles()
-popauthors()
-errordates()
+if __name__ == "__main__":
+    top3articles()
+    popauthors()
+    errordates()
